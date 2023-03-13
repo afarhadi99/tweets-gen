@@ -18,9 +18,10 @@ RUN yarn install
 
 # Copy the rest of the application files to the container
 COPY . .
+RUN npm run build
 
-# Expose the port on which the server will run
+# Expose port 3000 to the host
 EXPOSE 3000
 
-# Start the server on port 3000
-CMD ["yarn", "run", "dev"]
+# Start the application
+CMD ["npm", "start"]
